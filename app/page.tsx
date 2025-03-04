@@ -4,9 +4,9 @@ import { ImagesSlider } from "@/components/images-slider/ImagesSlider";
 export default function Home() {
   return (
       <>
-      <div className="">
-      <HeroBackground/>
-      </div>
+        
+        <HeroBackground/>
+        
       <main className="flex flex-col items-center">
           
           <ImagesSlider />

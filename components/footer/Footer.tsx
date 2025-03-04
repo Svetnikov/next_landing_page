@@ -32,9 +32,9 @@ export const Footer = () => {
         </footer>
 
         <footer className="bg-gray-800 text-white py-4">
-        <div className="container mx-auto grid lg:grid-cols-3">
+        <div className="container mx-auto grid lg:grid-cols-3 gap-6">
 
-            <div className='flex flex-col items-center /* lg:items-center */'>
+            <div className='flex flex-col items-center order-3 lg:order-1'>
                 <Image
                 alt='hola'
                 src='/cblogowhite.png'
@@ -49,13 +49,13 @@ export const Footer = () => {
             
             {/* <div className="flex space-x-4"></div> */}
 
-            <div className='grid text-center items-end '>
+            <div className='grid text-center items-end order-3 lg:order-2'>
                 <span>Av. Arismendi, al lado de la E/S San Luis, Cumaná, Venezuela.</span>
                 <span>© {new Date().getFullYear()} CABLEBRASIL, C.A.</span>
                 <span className='text-sm'>Made with ❤️ by Svetnikov (Antonio De Santis)</span>
             </div>
 
-            <div className='flex gap-2 justify-center'>
+            <div className='flex gap-2 justify-center order-1 lg:order-3'>
             <Image
                 alt='WhatsApp'
                 src='/whatsapp.svg'

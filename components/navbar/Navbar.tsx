@@ -1,8 +1,10 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
 import { ActiveLink } from '../active-link/ActiveLink'
 import Image from 'next/image'
 import style from '../active-link/ActiveLink.module.css'
+import { usePathname } from "next/navigation"
 
 const navItems = [
   { path: '/about', text: 'AT. AL CLIENTE'},
@@ -17,8 +19,10 @@ const subnavItems = [
 ]
 
 export const Navbar = () => {
+  const pathName = usePathname()
+
   return (
-    <>
+    <div className={`${pathName === '/' && 'absolute top-0 left-0 w-full z-10'} `}>
       <nav className='flex justify-stretch lg:justify-between bg-blue-800 p-2 lg:p-5 '>
           <Link className='mr-0 lg:mr-2 flex items-center' href={'/'}>
             <Image
@@ -37,9 +41,9 @@ export const Navbar = () => {
             <Link href='portal_pagos' className={style['link-cb']}>PAGOS</Link>
           </div>
       </nav>
-      <nav className='flex justify-center bg-orange-500 p-2'>
+      <nav className='flex justify-center z-10 bg-orange-500 p-2'>
         <Link className='mr-2 flex items-center' href={'/'}/>
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center text-center'>
           {
             subnavItems.map( navItem => (
               <ActiveLink key={navItem.path} {...navItem} />
@@ -47,6 +51,6 @@ export const Navbar = () => {
           }
         </div>
     </nav>
-    </>
+    </div>
   )
 }
