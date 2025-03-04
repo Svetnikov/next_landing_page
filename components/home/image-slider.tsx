@@ -8,14 +8,18 @@ import { Pagination } from "swiper/modules";
 
 export const ImageSlider = () => {
   return (
-    <section className="p-8">
-      <div className={"max-w-[400px] mx-auto"}>
+    <section className="my-5">
+      <div
+        className={
+          "w-full min-w-[100px] max-w-[300px] md:max-w-[400px] mx-auto"
+        }
+      >
         <Swiper
           pagination={true}
           modules={[Pagination]}
           autoplay={true}
           loop={true}
-          className="mySwiper w-full h-full"
+          className="mySwiper"
           parallax={true}
         >
           <SwiperSlide>
