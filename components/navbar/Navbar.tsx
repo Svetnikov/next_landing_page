@@ -13,9 +13,7 @@ export const Navbar = () => {
 
   return (
     <div
-      className={`${
-        pathName === "/" && "absolute top-0 left-0 w-full z-10"
-      } transition-all duration-300`}
+      className={`${pathName === "/" && "absolute top-0 left-0 w-full z-10"}`}
     >
       <nav className="w-full flex items-center justify-between bg-blue-800 p-4 lg:p-5 ">
         <Link className="mr-0 lg:mr-2 flex items-center" href={"/"}>
@@ -49,10 +47,12 @@ export const Navbar = () => {
         </div>
       </nav>
       <nav
-        className={`absolute justify-center z-10 bg-orange-500 p-2 transition-all duration-300 w-full -top-80 md:top-0`}
+        className={`absolute justify-center z-10 bg-orange-500 p-2 w-full md:top-24 ${
+          isOpen ? "" : "-top-80 hidden md:flex"
+        }`}
       >
         <div
-          className={`flex items-center justify-center text-center gap-x-4 font-semibold tracking-wider text-white md:flex-row md:gap-y-0 md:my-0 ${
+          className={`flex items-center justify-center text-center gap-x-4 font-semibold tracking-wider text-white md:flex-row md:gap-y-0 md:my-0 transition-all duration-300  ${
             isOpen ? "flex-col gap-y-6 my-4" : ""
           }`}
         >
