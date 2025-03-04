@@ -1,23 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar/Navbar";
-import { Footer } from "@/components/footer/Footer";
+import "./swiper.css";
+import { Navbar } from "@/components/navbar/navbar";
+import { Footer } from "@/components/footer";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Pruebas con Next",
-  description: "Por Antonio De Santis",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || ""),
+  title: {
+    default: "Home",
+    template: "%s | CABLE BRASIL, C.A.",
+  },
+  description:
+    "Servicio por televisión por Cable en la Ciudad de Cumaná. By Antonio De Santis",
+  keywords: [
+    "TV",
+    "Televisión",
+    "TV por Cable",
+    "Televisión por Cable",
+    "Cumana",
+    "Venezuela",
+    "Cable Brasil",
+  ],
 };
 
 export default function RootLayout({
@@ -27,18 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${spaceGrotesk.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Navbar></Navbar>
-        {/* <main className="flex flex-col items-center"> */}
-
-        <div className="flex-grow">
-          {children}
-        </div>
-        <Footer/>
-
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
