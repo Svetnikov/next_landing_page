@@ -13,7 +13,8 @@ export const ActiveLink = ( {path, text}: Props ) => {
     console.log(pathName)
   return (
     <Link
-        className={`${style.link}  ${ pathName === path && style['active-link'] }` } 
+        className={
+        `${style.link} ${ pathName === path && style['active-link']}` } 
         href={path}
         key={path}>
             {text}
