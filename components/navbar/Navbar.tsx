@@ -9,7 +9,7 @@ import { MenuIcon } from "./menu";
 
 export const Navbar = () => {
   const pathName = usePathname();
-  const [isOpen, setIsOpen] = React.useState<boolean>(true);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   return (
     <div
